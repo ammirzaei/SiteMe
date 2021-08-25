@@ -7,14 +7,22 @@
         <div class="panel-content">
             <div class="samples">
                 <div class="sample">
-                    <img src="/assets/img/project.png" [alt]="'Samples.sample1.Name' | translate" [title]="'Samples.sample1.Name' | translate">
+                    <img src="/assets/img/project.png" [alt]="'Samples.sample1.Name' | translate"
+                        [title]="'Samples.sample1.Name' | translate">
                     <h3>{{'Samples.sample1.Name' | translate}}</h3>
                     <div class="details" #detail_1>
                         <i class="mdi mdi-24px mdi-close" (click)="CloseDetail(detail_1)"></i>
                         <span (click)="ShowDetail(detail_1)">{{'Samples.Details' | translate}}</span>
                         <div class="des">
                             <p>{{'Samples.sample1.Des' | translate}}</p>
-                            <a href="https://dr-hesabit.ir" target="_blank">{{'Samples.Address' | translate}}</a>
+                            <div class="address">
+                                <a href="https://dr-hesabit.ir" target="_blank" [title]="'Samples.AddressWeb' | translate">
+                                    <i class="mdi mdi-36px mdi-web"></i> 
+                                </a>
+                                <a href="https://github.com/ammirzaei/Dr_Hesabi.git" target="_blank" [title]="'Samples.AddressGithub' | translate">
+                                    <i class="mdi mdi-36px mdi-github-circle"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

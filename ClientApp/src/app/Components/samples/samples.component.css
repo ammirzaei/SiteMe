@@ -45,10 +45,8 @@
 .details .des {
     display: none;
 }
-.des a{
-    color: #087e8b;
-}
-.details i {
+
+.details .mdi-close {
     display: none;
 }
 
@@ -67,7 +65,7 @@
     height: 100%;
 }
 
-.details.show i {
+.details.show .mdi-close {
     display: block;
     position: absolute;
     top: 5px;
@@ -79,6 +77,15 @@
     height: 30px;
     cursor: pointer;
     z-index: 99;
+}
+
+.address a:hover, .address a:focus {
+    color: #087e8b;
+}
+
+.address a {
+    color: #3c3c3c;
+    transition: all .6s ease-out;
 }
 
 @media (max-width:768px) {
