@@ -56,7 +56,8 @@
     },
     "Samples": {
         "Details": "Details",
-        "Address": "Site Address",
+        "AddressWeb": "Site Address",
+        "AddressGithub": "GitHub Address",
         "sample1": {
             "Name": "Dr. Hesabi Conservatory",
             "Des": "This website is designed for the State Technical Conservatory of Dr. Hesabi Torbat-e Heydarieh who has an online test feature"
