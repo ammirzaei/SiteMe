@@ -1,0 +1,91 @@
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px 20px;
+    padding: 10px;
+}
+
+.skill {
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    padding: 25px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all .6s ease-out;
+    position: relative;
+    opacity: 0;
+}
+
+.skill.show-right {
+    animation: skill-show-right 1s .3s ease-out forwards;
+}
+
+.skill.show-left {
+    animation: skill-show-left 1s .3s ease-out forwards;
+}
+
+@keyframes skill-show-right {
+    from {
+        right: -10rem;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes skill-show-left {
+    from {
+        left: -10rem;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.skill:hover, .skill:focus {
+    background-color: transparent;
+    border: 1px solid #f5f5f5;
+    cursor: none;
+}
+
+.skill:hover p, .skill:focus p {
+    display: none;
+}
+
+.skill:hover h2, .skill:focus h2 {
+    color: #f5f5f5;
+}
+
+.skill h2 {
+    color: #3c3c3c;
+}
+
+.skill p {
+    color: #8b8c89;
+    font-size: 13px;
+}
+
+@media (max-width: 1280px) {
+    .skills {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width:768px) {
+    .skills {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:480px) {
+    .skills {
+        grid-template-columns: 1fr;
+    }
+}

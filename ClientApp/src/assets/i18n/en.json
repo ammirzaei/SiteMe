@@ -1,0 +1,71 @@
+{
+    "Router": {
+        "Home": "Home",
+        "About": "About Me",
+        "Skills": "Skills",
+        "Favorite": "My Favorites",
+        "Lang": "Language",
+        "Contact": "Contact With Me",
+        "Samples": "Sample Work"
+    },
+    "Title": {
+        "Profile": "AmirMohammad Mirzaei Personal Site | Home",
+        "About": "AmirMohammad Mirzaei Personal Site | About Me",
+        "Skills": "AmirMohammad Mirzaei Personal Site | Skills",
+        "Contact": "AmirMohammad Mirzaei Personal Site | Contact With Me",
+        "Samples": "AmirMohammad Mirzaei Personal Site | Sample Work"
+    },
+    "Profile": {
+        "Name": "AmirMohammad Mirzaei",
+        "Typing1": "Programmer",
+        "Typing2": "Web Developer",
+        "Typing3": "Site Designer"
+    },
+    "About": {
+        "Name": "AmirMohammad Mirzaei",
+        "Location": "Khorasan Razavi, Torbat-e Heydarieh",
+        "Des1": "AmirMohammad Mirzaei was born in 2004 in Torbat-e Heydarieh and studying network and computer software.",
+        "Des2": "From the age of 15, I have started seriously in the field of programming.",
+        "Des3" : "Gain second rank in the design trend in thirty ninth cultural and artistic festivals tomorrow.",
+        "Fav1": "Coding",
+        "Fav2": "Drink Coffee",
+        "Fav3": "Watching Movie",
+        "Fav4": "Listening To Music",
+        "Fav5": "Book Reading",
+        "Fav6": "Game Playing",
+        "Fav7": "Exercise"
+    },
+    "Contact": {
+        "FullName": "Name *",
+        "Email": "Email *",
+        "Message": "Message *",
+        "Send": "Send Message",
+        "Instagram": "Instagram",
+        "Telegram": "Telegram",
+        "Email2": "Email",
+        "Github": "Github",
+        "FormControlFullName-required": "You need to enter your name",
+        "FormControlFullName-minLength": "Name should enter more 10 characters",
+        "FormControlFullName-maxLength": "Name should enter less than 150 characters",
+        "FormControlEmail-required": "Your email must enter",
+        "FormControlEmail-email": "Enter valid email",
+        "FormControlEmail-maxLength": "Email must enter less than 200 characters",
+        "FormControlMessage-required": "You need to enter your message.",
+        "FormControlMessage-minLength": "Message should enter more of 20 characters",
+        "FormControlMessage-maxLength": "Message must enter less than 900 characters"
+    },
+    "Samples": {
+        "Details": "Details",
+        "Address": "Site Address",
+        "sample1": {
+            "Name": "Dr. Hesabi Conservatory",
+            "Des": "This website is designed for the State Technical Conservatory of Dr. Hesabi Torbat-e Heydarieh who has an online test feature"
+        }
+    },
+    "Skills": {
+        "Programming-language": "Programming Language",
+        "Markup-language": "Markup Language",
+        "Framework": "Framework",
+        "Library": "Library"
+    }
+}

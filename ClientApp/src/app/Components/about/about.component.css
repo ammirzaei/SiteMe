@@ -1,0 +1,151 @@
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    margin-left: 2rem;
+    text-align: center;
+}
+
+.about.en .profile {
+    margin-right: 2rem;
+}
+
+.profile img {
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+
+.description {
+    line-height: 40px;
+}
+
+.description h1 {
+    margin-bottom: 10px;
+}
+
+.location {
+    font-size: 13px;
+}
+
+.location i {
+    color: #c1839f;
+}
+
+.favorite-header {
+    text-align: center;
+    color: #f5f5f5;
+    position: relative;
+    padding: 20px;
+}
+
+.favorite-header h4 {
+    background-color: #ff5a5f;
+    display: initial;
+    padding: 2px 5px;
+    border-radius: 10px;
+}
+
+.favorite-header::before, .favorite-header::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #f5f5f5;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.favorite-header::after {
+    right: 0;
+}
+
+.favorite-header::before {
+    left: 0;
+}
+
+.favorite {
+    padding: 2rem 3rem 1rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    overflow: hidden;
+}
+
+.fav {
+    background-color: transparent;
+    border: 1px solid #f5f5f5;
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    transition: all .7s ease-out;
+    color: #f5f5f5;
+    opacity: 0;
+    position: relative;
+}
+
+.fav:hover {
+    background-color: #f5f5f5;
+    color: #3c3c3c;
+    cursor: none;
+}
+
+.fav span {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+@media (max-width:1280px) {
+    .favorite {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width:768px) {
+    .about {
+        flex-direction: column;
+    }
+    .profile {
+        margin-left: 0;
+    }
+    .about.en .profile {
+        margin-right: 0;
+    }
+    .profile img {
+        width: 220px;
+        height: 220px;
+    }
+    .description h1 {
+        text-align: center;
+    }
+    .favorite {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:480px) {
+    .profile img {
+        width: 200px;
+        height: 200px;
+    }
+    .favorite {
+        grid-template-columns: 1fr;
+        padding: 1rem 3rem 1rem 3rem;
+    }
+    .fav {
+        height: 50px;
+    }
+    .favorite-header h4 {
+        padding: 2px 5px;
+        font-size: 14px;
+    }
+}

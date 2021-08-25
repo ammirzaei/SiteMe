@@ -1,0 +1,78 @@
+<div class="content">
+    <div class="panel">
+        <div class="panel-header">
+            <h3>{{'Router.Contact' | translate}}</h3>
+            <i class="mdi mdi-24px mdi-all-inclusive"></i>
+        </div>
+        <div class="panel-content">
+            <div class="contact-message">
+                <form class="contact-form" #formContact="ngForm" method="POST" autocomplete="off"
+                    [formGroup]="FormGroup" (submit)="OnSubmitContact(formContact.value)">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="FullName" 
+                            [placeholder]="'Contact.FullName' | translate" id="FullName" formControlName="FullName"
+                            (focusout)="ShowFullNameError?'':ShowFullNameError=true"
+                            (keypress)="ShowFullNameError?'':ShowFullNameError=true">
+                        <span class="text-danger"
+                            *ngIf="FormGroup.invalid&&ShowFullNameError">{{GetErrorForm('FullName')}}</span>
+                    </div> 
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="Email"
+                            [placeholder]="'Contact.Email' | translate" id="Email" formControlName="Email"
+                            (focusout)="ShowEmailError?'':ShowEmailError=true"
+                            (keypress)="ShowEmailError?'':ShowEmailError=true">
+                        <span class="text-danger"
+                            *ngIf="FormGroup.invalid&&ShowEmailError">{{GetErrorForm('Email')}}</span>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="Message" class="form-control" [placeholder]="'Contact.Message' | translate"
+                            id="Message" formControlName="Message" spellcheck="false"
+                            (focusout)="ShowMessageError?'':ShowMessageError=true"
+                            (keypress)="ShowMessageError?'':ShowMessageError=true"></textarea>
+                        <span class="text-danger"
+                            *ngIf="FormGroup.invalid&&ShowMessageError">{{GetErrorForm('Message')}}</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" [value]="'Contact.Send' | translate" id="Send"
+                            [disabled]="FormGroup.invalid">
+                    </div>
+                </form>
+            </div>
+            <div class="contact-map">
+                <div class="contact-item" [title]="'Contact.Instagram' | translate">
+                    <i class="mdi mdi-36px mdi-instagram"></i>
+                    <p>
+                        <a href="#">
+                            <bdi>@amirmhm_83</bdi>
+                        </a>
+                    </p>
+                </div>
+                <div class="contact-item" [title]="'Contact.Email2' | translate">
+                    <i class="mdi mdi-36px mdi-email"></i>
+                    <p>
+                        <a href="mailto:ammirzaei.dev@gmail.com">
+                            <bdi>ammirzaei.dev@gmail.com</bdi>
+                        </a>
+                    </p>
+                </div>
+                <div class="contact-item" [title]="'Contact.Telegram' | translate">
+                    <i class="mdi mdi-36px mdi-telegram"></i>
+                    <p>
+                        <a href="http://">
+                            <bdi>@ammo_pr</bdi>
+                        </a>
+                    </p>
+                </div>
+                <div class="contact-item" [title]="'Contact.Github' | translate">
+                    <i class="mdi mdi-36px mdi-github-circle"></i>
+                    <p>
+                        <a href="https://github.com/ammirzaei">
+                            <bdi>ammirzaei</bdi>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-loading></app-loading>

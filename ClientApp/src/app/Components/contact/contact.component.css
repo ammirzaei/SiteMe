@@ -1,0 +1,132 @@
+.contact-message, .contact-map {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px 20px;
+}
+
+.form-control {
+    all: unset;
+    width: 100%;
+    border-bottom: 1px solid #c1839f;
+    border-right: 1px solid #c1839f;
+    padding: 10px;
+    color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    animation: borderColor .4s ease-out forwards;
+}
+
+@keyframes borderColor {
+    from {
+        border-color: #c1839f;
+    }
+    to {
+        border-color: #ff5a5f;
+    }
+}
+
+#Message {
+    resize: vertical;
+    min-height: 130px;
+    max-height: 200px;
+}
+
+#Send {
+    all: unset;
+    border: 1px solid #00a7b5;
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: all .5s ease-out;
+}
+#Send:disabled{
+    cursor: default;
+    border: 1px solid #c1839f;
+}
+#Send:enabled:hover {
+    background-color: #00a7b5;
+}
+
+
+input.ng-valid, textarea.ng-valid {
+    border-color: #00a7b5;
+}
+
+.form-group {
+    padding: 1rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-group .text-danger {
+    text-align: right;
+}
+
+.form-group:nth-child(3), .form-group:nth-child(4) {
+    grid-column: 1/3;
+}
+
+.contact-map {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.contact-item {
+    text-align: center;
+    line-height: 30px;
+}
+
+.contact-item a {
+    color: #f5f5f5;
+    transition: all .6s ease-out;
+}
+
+.contact-item a:hover, .contact-item a:focus {
+    color: #00a7b5;
+}
+
+@media (max-width:768px) {
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+    .form-group:nth-child(3), .form-group:nth-child(4) {
+        grid-column: 1/2;
+    }
+    .contact-map {
+        flex-direction: column;
+    }
+    .contact-item {
+        margin: 1.5rem 0;
+    }
+}
+
+@media (max-width:480px) {
+    .contact-message, .contact-map {
+        padding: .5rem;
+    }
+    .form-group {
+        padding: 1rem 1rem;
+    }
+    #FullName, #Email, #Message {
+        padding: 5px 8px;
+    }
+    .text-danger {
+       font-size: 14px;
+    }
+}

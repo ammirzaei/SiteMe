@@ -1,0 +1,66 @@
+<div class="content">
+    <div class="panel">
+        <div class="panel-header">
+            <h3>{{'Router.About' | translate}}</h3>
+            <i class="mdi mdi-24px mdi-all-inclusive"></i>
+        </div>
+        <div class="panel-content">
+            <div class="about" [class]="_translate.currentLang=='en'?'en':''">
+                <div class="profile">
+                    <img src="/assets/img/profile.jpg" alt="{{'About.Name' | translate}}"
+                        title="{{'About.Name' | translate}}">
+                </div>
+                <div class="description">
+                    <h1>{{'About.Name' | translate}}</h1>
+                    <p class="location">
+                        <i class="mdi mdi-map-marker"></i>
+                        {{'About.Location' | translate}}
+                    </p>
+                    <p>
+                        {{'About.Des1' | translate}}
+                    </p>
+                    <p>
+                        {{'About.Des2' | translate}}
+                    </p>
+                    <p>
+                        {{'About.Des3' | translate}}
+                    </p>
+                </div>
+            </div>
+            <div class="favorite-header">
+                <h4>{{'Router.Favorite' | translate}}</h4>
+            </div>
+            <div class="favorite">
+                <div class="fav">
+                    <i class="mdi mdi-36px mdi-code-tags"></i>
+                    <span>{{'About.Fav1' | translate}}</span>
+                </div>
+                <div class="fav">
+                    <i class="mdi mdi-36px mdi-coffee"></i>
+                    <span>{{'About.Fav2' | translate}}</span>
+                </div>
+                <div class="fav">
+                    <i class="mdi mdi-36px mdi-movie"></i>
+                    <span>{{'About.Fav3' | translate}}</span>
+                </div>
+                <div class="fav">
+                    <i class="mdi mdi-36px mdi-music"></i>
+                    <span>{{'About.Fav4' | translate}}</span>
+                </div>
+                <div class="fav">
+                    <i class="mdi mdi-36px mdi-book-open-page-variant"></i>
+                    <span>{{'About.Fav5' | translate}}</span>
+                </div>
+                <div class="fav">
+                    <i class="mdi mdi-36px mdi-gamepad-square"></i>
+                    <span>{{'About.Fav6' | translate}}</span>
+                </div>
+                <div class="fav">
+                    <i class="mdi mdi-36px mdi-run"></i>
+                    <span>{{'About.Fav7' | translate}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-loading></app-loading>

@@ -1,0 +1,46 @@
+<header>
+    <nav class="nav">
+        <ul class="nav-ul" [class]="conditionNav">
+            <li class="nav-item command" (click)="CommandNav()">
+                <i class="mdi mdi-format-align-center"></i>
+            </li>
+            <li class="nav-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" title="{{ 'Router.Home' | translate}}"> 
+                <i class="mdi mdi-home-circle"></i>
+            </li>
+            <li class="nav-item" routerLink="/About" routerLinkActive="active" title="{{ 'Router.About' | translate }}">
+                <i class="mdi mdi-account-circle"></i>
+            </li>
+            <li class="nav-item" routerLink="/Skills" routerLinkActive="active" title="{{ 'Router.Skills' | translate}}">
+                <i class="mdi mdi-receipt"></i>
+            </li>
+            <li class="nav-item" routerLink="/Samples" routerLinkActive="active" title="{{ 'Router.Samples' | translate}}">
+                <i class="mdi mdi-briefcase"></i>
+            </li>
+            <li class="nav-item" routerLink="/Contact" routerLinkActive="active" title="{{ 'Router.Contact' | translate}}">
+                <i class="mdi mdi-email"></i>
+            </li>
+            <li class="nav-item" title="{{ 'Router.Lang' | translate}}" (click)="ChangeSelectLang()">
+                <span class="lang">{{SelectLang=='fa'?'en':'fa'}}</span>
+            </li>
+            <!-- <li>
+                <i class="mdi mdi-blogger"></i>
+            </li> -->
+            <!-- <li (click)="ChangeTheme()">
+                <i class="mdi" [class]="isDarkTheme?'mdi-white-balance-sunny':'mdi-brightness-2'"></i>
+            </li> -->
+        </ul>
+    </nav>
+</header>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<footer>
+    <div class="music" (click)="CommandMusic()" [class]="isPlayMusic?'play':'pause'">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</footer>

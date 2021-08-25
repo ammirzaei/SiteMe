@@ -1,0 +1,10 @@
+<div class="profile">
+    <img src="assets/img/profile.jpg" alt="{{'Profile.Name' | translate}}" title="{{'Profile.Name' | translate}}">
+    <h1>{{'Profile.Name' | translate}}</h1>
+    <div class="wrapper" [lang]="_translate.currentLang=='fa'?'rtl':'ltr'">
+        <span class="typing show">{{'Profile.Typing1' | translate}}</span>
+        <span class="typing">{{'Profile.Typing2' | translate}}</span>
+        <span class="typing">{{'Profile.Typing3' | translate}}</span>
+    </div>
+</div>
+<app-loading></app-loading>
