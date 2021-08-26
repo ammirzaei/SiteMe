@@ -10,10 +10,16 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: roboto;
+    src: url("assets/fonts/roboto-v27-latin-700.eot") format("eot"), url("assets/fonts/roboto-v27-latin-700.ttf") format("ttf"), url("assets/fonts/roboto-v27-latin-700.woff") format("woff"), url("assets/fonts/roboto-v27-latin-700.woff2") format("woff2");
+    font-weight: normal;
+}
+
 body {
     direction: rtl;
     overflow: hidden;
-    font-family: iranyekan, tahoma;
+    font-family: iranyekan, arial, tahoma;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('assets/img/background.jpg') center no-repeat;
     background-size: cover;
     scroll-behavior: smooth;
@@ -21,7 +27,7 @@ body {
 
 body.en {
     direction: ltr;
-    font-family: 'Arial Rounded MT Bold', Calibri, tahoma;
+    font-family: roboto, arial, tahoma;
 }
 
 main {
@@ -121,9 +127,11 @@ a {
     border-radius: 15px;
     overflow-x: hidden;
 }
+
 .text-danger {
     color: #ff5a5f;
 }
+
 @media (max-width:768px) {
     main .content {
         margin: 4.5rem 1rem 0 1rem;
