@@ -1,0 +1,33 @@
+.loader{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3c3c3c;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+}
+.loader.hide{
+    z-index: -1;
+    display: none;
+}
+.progress{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 20px solid #f5f5f5;
+    border-right: 20px solid #ff5a5f;
+    border-left: 20px solid #ff5a5f;
+    overflow: hidden;
+    animation: progress 1s linear infinite;
+}
+@keyframes progress{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
