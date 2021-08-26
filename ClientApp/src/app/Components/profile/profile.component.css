@@ -81,13 +81,17 @@
 }
 
 @media (max-width:768px) {
-    .profile {
-        line-height: 37px;
-    }
     .profile h1 {
-        font-size: 2rem;       
+        font-size: 2rem;
     }
     .typing {
         font-weight: normal;
+        font-size: 15px;
+    }
+}
+
+@media (max-width:480px) {
+    .typing {
+        font-size: 14px;
     }
 }
