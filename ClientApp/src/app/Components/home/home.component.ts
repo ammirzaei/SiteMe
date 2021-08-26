@@ -116,7 +116,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   isPlayMusic: boolean = false;
   audio = new Audio();
   Audio() {
-    this.audio.src = ""; /// ../../../assets/music/audio.mp3
+    this.audio.src = "../../../assets/music/audio.mp3";
     this.audio.load();
     if (localStorage.getItem('Music')) {
       var localMusic = localStorage.getItem('Music');
