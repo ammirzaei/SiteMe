@@ -1,5 +1,4 @@
-import { Router } from '@angular/router';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,16 +6,13 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, public _translate: TranslateService) {
+  constructor(public _translate: TranslateService) {
     _translate.addLangs(['fa', 'en']);
     _translate.setDefaultLang('fa');
     // const browserLang = _translate.getBrowserLang();
     //  _translate.use(browserLang.match(/fa|en/) ? browserLang : 'fa');
-  }
-  ngAfterViewInit(): void {
-
   }
   ngOnInit(): void {
     this.Audio();
@@ -118,6 +114,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   Audio() {
     this.audio.src = "../../../assets/music/audio.mp3";
     this.audio.load();
+    this.audio.addEventListener('pause', () => {
+      this.isPlayMusic = false;
+      localStorage.setItem('Music', 'Pause');
+    });
+    this.audio.addEventListener('play', () => {
+      this.isPlayMusic = true;
+      localStorage.setItem('Music', 'Play');
+    });
     if (localStorage.getItem('Music')) {
       var localMusic = localStorage.getItem('Music');
       if (localMusic === 'Play') {
@@ -131,7 +135,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   CommandMusic() {
     this.isPlayMusic = !this.isPlayMusic;
-    localStorage.setItem('Music', this.isPlayMusic ? 'Play' : 'Pause');
     if (this.isPlayMusic) {
       this.audio.play();
     } else {
