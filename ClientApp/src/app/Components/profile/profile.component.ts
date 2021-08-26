@@ -41,6 +41,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.lengthTyping = this.typings.length;
     this.setIntervalTyping = setInterval(() => {
       this.Typing();
-    }, 2000);
+    }, 4000);
   }
 }

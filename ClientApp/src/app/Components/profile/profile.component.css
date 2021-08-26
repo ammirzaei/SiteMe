@@ -56,8 +56,8 @@
 
 .typing.show {
     display: block;
-    animation: typing 2s steps(27, end), test 1s step-end;
-    -webkit-animation: typing 2s steps(27, end), test 1s step-end;
+    animation: typing 2s steps(10, end), test 1s step-end;
+    -webkit-animation: typing 2s steps(10, end), test 1s step-end;
 }
 
 @keyframes typing {
