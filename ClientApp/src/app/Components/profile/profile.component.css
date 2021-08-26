@@ -1,8 +1,9 @@
 .profile {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
     color: #f5f5f5;
     line-height: 45px;
@@ -18,6 +19,8 @@
 .profile h1 {
     font-weight: bold;
     font-size: 3rem;
+    word-break: keep-all;
+    position: relative;
 }
 
 .wrapper {
@@ -53,8 +56,8 @@
 
 .typing.show {
     display: block;
-    animation: typing 6s steps(40, end), test 1s step-end;
-    -webkit-animation: typing 6s steps(40, end), test 1s step-end;
+    animation: typing 2s steps(27, end), test 1s step-end;
+    -webkit-animation: typing 2s steps(27, end), test 1s step-end;
 }
 
 @keyframes typing {
@@ -82,26 +85,9 @@
         line-height: 37px;
     }
     .profile h1 {
-        font-size: 2rem;
-    }
-    .profile img {
-        width: 220px;
-        height: 220px;
+        font-size: 2rem;       
     }
     .typing {
         font-weight: normal;
-    }
-}
-
-@media (max-width:480px) {
-    .profile h1 {
-        font-weight: normal;
-        font-size: 1.6rem;
-        max-width: 100%;
-    }
-    .profile img {
-        width: 180px;
-        height: 180px;
-        max-width: 180px;
     }
 }
