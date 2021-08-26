@@ -135,7 +135,7 @@ a {
         font-size: 15px;
     }
     .panel-content {
-        padding: 4rem 1rem 2rem 1rem;
+        padding: 4rem 1rem;
     }
 }
 
@@ -151,6 +151,6 @@ a {
         font-size: 14px;
     }
     .panel-content {
-        padding: 4rem .5rem 2rem .5rem;
+        padding: 4rem .5rem;
     }
 }
