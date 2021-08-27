@@ -94,4 +94,8 @@
     .typing {
         font-size: 14px;
     }
+    .profile img {
+        width: 240px;
+        height: 240px;
+    }
 }
