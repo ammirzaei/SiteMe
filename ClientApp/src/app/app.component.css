@@ -18,8 +18,8 @@
     height: 200px;
     border-radius: 50%;
     border: 20px solid #f5f5f5;
-    border-right: 20px solid #ff5a5f;
-    border-left: 20px solid #ff5a5f;
+    border-right: 20px solid #3c3c3c;
+    border-left: 20px solid #3c3c3c;
     overflow: hidden;
     animation: progress 1s linear infinite;
 }
