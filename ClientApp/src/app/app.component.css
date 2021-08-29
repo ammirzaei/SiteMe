@@ -1,4 +1,4 @@
-.loader{
+.loader {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -9,25 +9,36 @@
     position: fixed;
     top: 0;
 }
-.loader.hide{
+
+.loader.hide {
     z-index: -1;
     display: none;
 }
-.progress{
+
+.progress {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    border: 20px solid #f5f5f5;
-    border-right: 20px solid #3c3c3c;
-    border-left: 20px solid #3c3c3c;
+    border: 20px solid transparent;
+    border-right-color: #f5f5f5;
+    border-left-color: #f5f5f5;
     overflow: hidden;
-    animation: progress 1s linear infinite;
+    animation: progress .9s linear infinite;
 }
-@keyframes progress{
-    from{
+
+@keyframes progress {
+    from {
         transform: rotate(0);
     }
-    to{
+    to {
         transform: rotate(180deg);
+    }
+}
+
+@media (max-width:768px) {
+    .progress {
+        width: 180px;
+        height: 180px;
+        border-width: 18px;
     }
 }
