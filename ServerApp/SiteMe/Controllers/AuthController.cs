@@ -34,10 +34,10 @@ namespace SiteMe.Controllers
             {
                 if (await _IAuth.ExistUser(login))
                 {
-                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_IConfiguration["Environment.SymmetricSecurityKey"]));
+                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_IConfiguration["SymmetricSecurityKey"]));
                     var signingCredentials = new SigningCredentials(secretKey,SecurityAlgorithms.HmacSha256);
                     var tokenOption = new JwtSecurityToken(
-                        issuer: _IConfiguration["Environment.AddressServer"],
+                        issuer: _IConfiguration["AddressServer"],
                         expires: DateTime.Now.AddDays(7),
                         signingCredentials: signingCredentials
                     );
@@ -45,10 +45,7 @@ namespace SiteMe.Controllers
 
                     return Ok(new {token = token});
                 }
-                return new ObjectResult("")
-                {
-                    StatusCode = 401
-                };
+                return Unauthorized();
             }
             return BadRequest();
         }
