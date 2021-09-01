@@ -24,12 +24,12 @@ export class SkillsComponent implements OnInit {
     var skills = document.querySelectorAll('.skill');
     var skillLength = skills.length;
     setTimeout(function () {
-      document.getElementsByClassName('content')[0].addEventListener('scroll', SkillShow);
+      document.getElementsByClassName('content-home')[0].addEventListener('scroll', SkillShow);
       function SkillShow() {
         skills.forEach(function (item, index) {
           if (!item.classList.contains('show')) {
             var skill = <HTMLElement>item;
-            if ((document.getElementsByClassName('content')[0].scrollTop + window.innerHeight) >= skill.offsetTop) {
+            if ((document.getElementsByClassName('content-home')[0].scrollTop + window.innerHeight) >= skill.offsetTop) {
               if (index % 2 === 0) {
                 /// this skill even
                 item.classList.add('show-right');
@@ -38,7 +38,7 @@ export class SkillsComponent implements OnInit {
                 item.classList.add('show-left');
               }
               if ((skillLength - 1) === index) {
-                document.getElementsByClassName('content')[0].removeEventListener('scroll', SkillShow);
+                document.getElementsByClassName('content-home')[0].removeEventListener('scroll', SkillShow);
               }
             }
           }

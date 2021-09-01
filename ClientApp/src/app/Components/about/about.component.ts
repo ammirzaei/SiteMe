@@ -24,12 +24,12 @@ export class AboutComponent implements OnInit {
     var favList = document.querySelectorAll('.fav');
     var favLength = favList.length;
     setTimeout(() => {
-      document.getElementsByClassName('content')[0].addEventListener('scroll', FavShow);
+      document.getElementsByClassName('content-home')[0].addEventListener('scroll', FavShow);
       function FavShow() {
         favList.forEach(function (item, index) {
           if (!item.classList.contains('show')) {
             var fav = <HTMLElement>item;
-            if ((document.getElementsByClassName('content')[0].scrollTop + window.innerHeight) >= fav.offsetTop) {
+            if ((document.getElementsByClassName('content-home')[0].scrollTop + window.innerHeight) >= fav.offsetTop) {
               item.classList.add('show');
               var delayAnimate = index + '00';
               item.animate(
@@ -49,7 +49,7 @@ export class AboutComponent implements OnInit {
                 duration: 1000 + +delayAnimate
               });
               if ((favLength - 1) === index) {
-                document.getElementsByClassName('content')[0].removeEventListener('scroll', FavShow);
+                document.getElementsByClassName('content-home')[0].removeEventListener('scroll', FavShow);
               }
             }
           }

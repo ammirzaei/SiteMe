@@ -30,12 +30,12 @@ body.en {
     font-family: roboto, arial, tahoma;
 }
 
-main {
+main.home {
     height: 100vh;
     overflow-y: hidden;
 }
 
-main .content {
+main .content-home {
     overflow-y: auto;
     height: 89vh;
     margin: 4.5rem 2rem 0 2rem;
@@ -98,13 +98,13 @@ a {
 
 /* e Scroll bar */
 
-.panel {
+.panel-home {
     position: relative;
     padding: 3rem 0 3rem 0;
     border-radius: 10px;
 }
 
-.panel-header {
+.panel-header-home {
     color: #f5f5f5;
     padding: 20px 20px 15px 20px;
     background-color: #087e8b;
@@ -118,7 +118,7 @@ a {
     transform: translateX(-50%);
 }
 
-.panel-content {
+.panel-content-home {
     color: #f5f5f5;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.1);
@@ -133,33 +133,33 @@ a {
 }
 
 @media (max-width:768px) {
-    main .content {
+    main .content-home {
         margin: 4.5rem 1rem 0 1rem;
     }
-    .panel {
+    .panel-home {
         padding: 2rem 0 2rem 0;
     }
-    .panel-header {
+    .panel-header-home {
         padding: 20px 15px 10px 15px;
         font-size: 15px;
     }
-    .panel-content {
+    .panel-content-home {
         padding: 4rem 1rem 2rem 1rem;
     }
 }
 
 @media (max-width:480px) {
-    main .content {
+    main .content-home {
         margin: 4.2rem .5rem 0 .5rem;
     }
-    .panel {
+    .panel-home {
         padding: 1rem 0 1rem 0;
     }
-    .panel-header {
+    .panel-header-home {
         padding: 15px 10px 5px 10px;
         font-size: 14px;
     }
-    .panel-content {
+    .panel-content-home {
         padding: 4rem .5rem 2rem .5rem;
     }
 }
