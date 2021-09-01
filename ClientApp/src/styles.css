@@ -20,8 +20,6 @@ body {
     direction: rtl;
     overflow: hidden;
     font-family: iranyekan, arial, tahoma;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('assets/img/background.jpg') center no-repeat;
-    background-size: cover;
     scroll-behavior: smooth;
 }
 
