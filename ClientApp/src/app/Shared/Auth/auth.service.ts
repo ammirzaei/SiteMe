@@ -11,15 +11,13 @@ import { catchError } from 'rxjs/operators';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-  // Error(error: HttpErrorResponse) {
-  //   if (error.status === 401) {
-  //     localStorage.clear();
-  //     // this.router.navigate(['/Account/Login']);
-  //   }
-  //   // return throwError('لطفا دوباره تلاش کنید');
-  //   return error.status;
-  // }
+  Error(error: HttpErrorResponse) {
+    if (error.status === 401) {
+      localStorage.clear();
+    }
+    return throwError('لطفا دوباره تلاش کنید');
+  }
   Login(Login: Login) {
-    return this.http.post(environment.AddressServer + "/Auth/Login", Login,{observe:"response"});
+    return this.http.post(environment.AddressServer + "/Auth/Login", Login, {  });
   }
 }
