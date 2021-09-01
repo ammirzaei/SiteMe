@@ -48,6 +48,8 @@
     display: initial;
     padding: 2px 5px;
     border-radius: 10px;
+    position: relative;
+    z-index: 99;
 }
 
 .favorite-header::before, .favorite-header::after {
@@ -59,7 +61,7 @@
     top: 50%;
     transform: translateY(-50%);
     border-radius: 20px;
-    z-index: -1;
+    z-index: 9;
 }
 
 .favorite-header::after {
