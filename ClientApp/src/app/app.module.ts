@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SamplesComponent } from './Components/samples/samples.component';
 import { AuthComponent } from './Components/auth/auth.component';
 import { AuthService } from './Shared/Auth/auth.service';
+import { AdminComponent } from './Components/admin/admin.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -30,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SkillsComponent,
     ContactComponent,
     SamplesComponent,
-    AuthComponent
+    AuthComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
