@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dr_Hesabi.Classes.Class;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -74,8 +75,12 @@ namespace SiteMe
                 });
             });
 
-            #region Services
+            #region OOP
             services.AddTransient<IAuth, AuthService>();
+            services.AddTransient<IContact, ContactService>();
+            services.AddTransient<ISetting, SettingService>();
+            //services.AddTransient<RenderToString.IViewRenderService, RenderToString.ViewRenderService>();
+
             #endregion
         }
 
