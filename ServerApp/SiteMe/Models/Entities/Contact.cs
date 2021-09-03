@@ -26,6 +26,11 @@ namespace SiteMe.Models.Entities
         [MaxLength(900)]
         public string Message { get; set; }
 
+        [Display(Name = "آی پی")]
+        [Required]
+        [MaxLength(50)]
+        public string IP { get; set; }
+
         [Display(Name = "تاریخ ثبت")]
         public DateTime CreateDate { get; set; } = DateTime.Now;
 
