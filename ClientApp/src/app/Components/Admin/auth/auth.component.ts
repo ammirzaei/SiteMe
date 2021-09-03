@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Login } from './../../Shared/Auth/Auth';
-import { AuthService } from './../../Shared/Auth/auth.service';
+import { Login } from '../../../Shared/Auth/Auth';
+import { AuthService } from '../../../Shared/Auth/auth.service';
 
 @Component({
   selector: 'app-auth',

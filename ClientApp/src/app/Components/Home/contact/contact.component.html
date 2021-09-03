@@ -6,21 +6,21 @@
         </div>
         <div class="panel-content-home">
             <div class="contact-message">
-                <form class="contact-form" #formContact="ngForm" method="POST" autocomplete="off"
-                    [formGroup]="FormGroup" (submit)="OnSubmitContact(formContact.value)">
+                <form class="contact-form" #form="ngForm" method="POST" autocomplete="off"
+                    [formGroup]="FormGroup" (submit)="SubmitContact()">    
                     <div class="form-group">
-                        <input type="text" class="form-control" name="FullName" 
+                        <input type="text" class="form-control" name="FullName"
                             [placeholder]="'Contact.FullName' | translate" id="FullName" formControlName="FullName"
                             (focusout)="ShowFullNameError?'':ShowFullNameError=true"
-                            (keypress)="ShowFullNameError?'':ShowFullNameError=true">
+                            (keypress)="ShowFullNameError?'':ShowFullNameError=true" [(ngModel)]="Message.FullName">
                         <span class="text-danger"
                             *ngIf="FormGroup.invalid&&ShowFullNameError">{{GetErrorForm('FullName')}}</span>
-                    </div> 
+                    </div>
                     <div class="form-group">
                         <input type="email" class="form-control" name="Email"
                             [placeholder]="'Contact.Email' | translate" id="Email" formControlName="Email"
                             (focusout)="ShowEmailError?'':ShowEmailError=true"
-                            (keypress)="ShowEmailError?'':ShowEmailError=true">
+                            (keypress)="ShowEmailError?'':ShowEmailError=true" [(ngModel)]="Message.Email">
                         <span class="text-danger"
                             *ngIf="FormGroup.invalid&&ShowEmailError">{{GetErrorForm('Email')}}</span>
                     </div>
@@ -28,13 +28,15 @@
                         <textarea name="Message" class="form-control" [placeholder]="'Contact.Message' | translate"
                             id="Message" formControlName="Message" spellcheck="false"
                             (focusout)="ShowMessageError?'':ShowMessageError=true"
-                            (keypress)="ShowMessageError?'':ShowMessageError=true"></textarea>
+                            (keypress)="ShowMessageError?'':ShowMessageError=true"
+                            [(ngModel)]="Message.Message"></textarea>
                         <span class="text-danger"
                             *ngIf="FormGroup.invalid&&ShowMessageError">{{GetErrorForm('Message')}}</span>
                     </div>
                     <div class="form-group">
                         <input type="submit" [value]="'Contact.Send' | translate" id="Send"
                             [disabled]="FormGroup.invalid">
+                        <span class="text-success" *ngIf="MessageOutput!=''">{{MessageOutput}}</span>
                     </div>
                 </form>
             </div>

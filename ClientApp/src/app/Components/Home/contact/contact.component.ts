@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
+import { Message } from '../../../Shared/Contact/ContactMessage';
+import { ContactService } from '../../../Shared/Contact/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private _translate: TranslateService, private _title: Title) {
+  constructor(private _translate: TranslateService, private _title: Title, private _Contact: ContactService) {
     // if (_translate.currentLang === undefined)
     //   _translate.use('fa'); 
   }
@@ -18,6 +20,9 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
     this._translate.get('Title.Contact').subscribe(t => {
       this._title.setTitle(t);
+    });
+    this._Contact.GetIP().subscribe((res: any) => {
+      this.Message.IP = res['ip'];
     });
   }
 
@@ -36,7 +41,8 @@ export class ContactComponent implements OnInit {
       Validators.required,
       Validators.minLength(20),
       Validators.maxLength(900)
-    ])
+    ]),
+    IP: new FormControl('', [])
   });
   GetErrorForm(input: string) {
     var errorText = '';
@@ -104,8 +110,27 @@ export class ContactComponent implements OnInit {
     }
     return errorText;
   }
-  OnSubmitContact(forme: NgForm) {
 
+  Message: Message = new Message();
+  MessageOutput: string = '';
+  SubmitContact() {
+    this._Contact.AddMessage(this.Message).subscribe((success) => {
+      if (success.status === 200) {
+        this.MessageOutput = 'پیام شما ارسال شد.';  
+      }
+      if (success.status === 204) {
+        this.MessageOutput = 'پیام قبلی شما در حال بررسی می باشد.';
+      }
+      this.ResetForm();
+    }, (error) => {
+
+    });
+  }
+  ResetForm() {
+    this.ShowFullNameError = false;
+    this.ShowEmailError = false;
+    this.ShowMessageError = false;
+    this.Message = new Message();
   }
   ShowFullNameError: boolean = false;
   ShowEmailError: boolean = false;
