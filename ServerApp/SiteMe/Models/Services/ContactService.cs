@@ -35,5 +35,10 @@ namespace SiteMe.Models.Services
         {
             return await db.Contact.AnyAsync(c => c.IP == ip && c.IsShow == false);
         }
+
+        public async Task<IEnumerable<Contact>> GetAllMessages()
+        {
+            return await db.Contact.OrderByDescending(c => c.CreateDate).ToListAsync();
+        }
     }
 }

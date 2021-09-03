@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SiteMe.Models.Entities;
 using SiteMe.Models.ViewModels;
 
 namespace SiteMe.Models.Interfaces
@@ -10,5 +11,6 @@ namespace SiteMe.Models.Interfaces
     {
         Task AddContactMessage(ContactViewModel contact);
         Task<bool> ExistIP(string ip);
+        Task<IEnumerable<Contact>> GetAllMessages();
     }
 }
