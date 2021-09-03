@@ -18,6 +18,7 @@ import { AuthComponent } from './Components/Admin/auth/auth.component';
 import { AuthService } from './Shared/Auth/auth.service';
 import { AdminComponent } from './Components/Admin/admin/admin.component';
 import { ContactService } from './Shared/Contact/contact.service';
+import { MessageComponent } from './Components/Admin/message/message.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -33,7 +34,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ContactComponent,
     SamplesComponent,
     AuthComponent,
-    AdminComponent
+    AdminComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
