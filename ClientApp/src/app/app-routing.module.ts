@@ -1,14 +1,14 @@
-import { ContactComponent } from './Components/contact/contact.component';
-import { SkillsComponent } from './Components/skills/skills.component';
-import { ProfileComponent } from './Components/profile/profile.component';
-import { AboutComponent } from './Components/about/about.component';
-import { HomeComponent } from './Components/home/home.component';
-import { AdminComponent } from './Components/admin/admin.component';
-import { SamplesComponent } from './Components/samples/samples.component';
+import { ContactComponent } from './Components/Home/contact/contact.component';
+import { SkillsComponent } from './Components/Home/skills/skills.component';
+import { ProfileComponent } from './Components/Home/profile/profile.component';
+import { AboutComponent } from './Components/Home/about/about.component';
+import { HomeComponent } from './Components/Home/home/home.component';
+import { AdminComponent } from './Components/Admin/admin/admin.component';
+import { SamplesComponent } from './Components/Home/samples/samples.component';
 import { AuthGuard } from './Shared/Auth/auth.guard';
 
 import { NgModule } from '@angular/core';
-import { AuthComponent } from './Components/auth/auth.component';
+import { AuthComponent } from './Components/Admin/auth/auth.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [

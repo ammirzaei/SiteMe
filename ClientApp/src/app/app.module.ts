@@ -3,20 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './Components/home/home.component';
-import { AboutComponent } from './Components/about/about.component';
-import { ProfileComponent } from './Components/profile/profile.component';
+import { HomeComponent } from './Components/Home/home/home.component';
+import { AboutComponent } from './Components/Home/about/about.component';
+import { ProfileComponent } from './Components/Home/profile/profile.component';
 import { LoadingComponent } from './Components/loading/loading.component';
-import { SkillsComponent } from './Components/skills/skills.component';
+import { SkillsComponent } from './Components/Home/skills/skills.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { ContactComponent } from './Components/contact/contact.component';
+import { ContactComponent } from './Components/Home/contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SamplesComponent } from './Components/samples/samples.component';
-import { AuthComponent } from './Components/auth/auth.component';
+import { SamplesComponent } from './Components/Home/samples/samples.component';
+import { AuthComponent } from './Components/Admin/auth/auth.component';
 import { AuthService } from './Shared/Auth/auth.service';
-import { AdminComponent } from './Components/admin/admin.component';
+import { AdminComponent } from './Components/Admin/admin/admin.component';
+import { ContactService } from './Shared/Contact/contact.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -48,7 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [AuthService],
+  providers: [AuthService, ContactService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
