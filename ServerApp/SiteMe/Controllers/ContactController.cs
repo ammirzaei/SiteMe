@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dr_Hesabi.Classes.Class;
+using Microsoft.AspNetCore.Authorization;
 using SiteMe.Models.Classes;
 using SiteMe.Models.Interfaces;
 using SiteMe.Models.ViewModels;
@@ -13,6 +14,7 @@ namespace SiteMe.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ContactController : ControllerBase
     {
         private readonly IContact _IContact;
@@ -25,7 +27,7 @@ namespace SiteMe.Controllers
         }
 
         [HttpPost]
-        [Route("Message")]
+        [Route("CreateMessage")]
         public async Task<IActionResult> PostMessage([FromBody] ContactViewModel contact)
         {
             if (ModelState.IsValid)
@@ -42,6 +44,13 @@ namespace SiteMe.Controllers
                 return NoContent();
             }
             return BadRequest();
+        }
+
+        [HttpGet]
+        [Route("GetAllMessages")]
+        public async Task<IActionResult> GetAllMessages()
+        {
+            return Ok(await _IContact.GetAllMessages());
         }
     }
 }
