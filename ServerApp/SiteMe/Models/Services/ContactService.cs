@@ -50,5 +50,13 @@ namespace SiteMe.Models.Services
                 IsShow = c.IsShow
             }).ToListAsync();
         }
+
+        public async Task ChangeShowMessage(int contactID)
+        {
+           var message = await db.Contact.FindAsync(contactID);
+           message.IsShow = true; 
+           db.Update(message);
+           await db.SaveChangesAsync();
+        }
     }
 }
