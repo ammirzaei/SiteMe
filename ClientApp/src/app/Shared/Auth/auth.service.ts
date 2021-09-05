@@ -11,13 +11,13 @@ import { catchError } from 'rxjs/operators';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-  Error(error: HttpErrorResponse) {
-    if (error.status === 401) {
-      localStorage.clear();
+  httpError(error: HttpErrorResponse) {
+    if (error.status === 0) {
+      alert("سرور در دسترس نیست");
     }
-    return throwError('لطفا دوباره تلاش کنید');
+    return throwError(error);
   }
   Login(Login: Login) {
-    return this.http.post(environment.AddressServer + "/Auth/Login", Login, {  });
+    return this.http.post(environment.AddressServer + "/Auth/Login", Login, {}).pipe(catchError(this.httpError));
   }
 }
