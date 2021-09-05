@@ -4,3 +4,12 @@ export class Message {
     Message?: string;
     IP?: string;
 }
+export class AllMessages {
+    contactID!: number;
+    fullName!: string;
+    email!: string;
+    message!: string;
+    ip!: string;
+    createDate!: string;
+    isShow!: boolean;
+}
