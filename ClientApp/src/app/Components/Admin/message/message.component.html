@@ -1,1 +1,44 @@
-<p>message works!</p>
+<div class="message">
+    <h2 class="message-header">لیست پیام ها({{AllMessages.length}})</h2>
+    <hr color="#f4f1de">
+    <div class="messageTable">
+        <table class="table table-responsive-sm table-hover table-bordered table-light">
+            <thead>
+                <tr>
+                    <th>نام کامل</th>
+                    <th>ایمیل</th>
+                    <th>آی پی</th>
+                    <th>تاریخ ارسال</th>
+                    <th>مشاهده</th>
+                    <th>دستورات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of AllMessages;let index=index">
+                    <td>{{item.fullName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.ip}}</td> 
+                    <td>{{item.createDate}}</td>
+                    <td>
+                        <span [class]="item.isShow?'text-success':'text-danger'">
+                            <i class="mdi mdi-24px mdi-check-circle" *ngIf="item.isShow"></i>
+                            <i class="mdi mdi-24px mdi-close-circle" *ngIf="item.isShow==false"></i>
+                        </span>
+                    </td>
+                    <td> 
+                        <a (click)="DeleteMessage(index)" class="btn btn-danger">حذف</a> |
+                        <a (click)="ShowMessage(index)" class="btn btn-warning">مشاهده</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="showMessage">
+    <i class="mdi mdi-24px mdi-close-circle" (click)="HideMessage()"></i> 
+    <div class="messageItem">
+        <h4 #Message></h4>
+        <span>پیام : </span>
+    </div> 
+</div>
+<div class="messageBack" (click)="HideMessage()"></div>

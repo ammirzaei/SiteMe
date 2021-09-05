@@ -1,0 +1,65 @@
+.messageTable {
+    overflow-x: auto;
+}
+
+.message-header {
+    text-align: center;
+    color: #f4f1de;
+}
+
+.showMessage {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: #e8e8e4;
+    width: 50%;
+}
+
+.showMessage.show {
+    display: block;
+}
+
+.showMessage .mdi-close-circle {
+    background-color: var(--bs-danger);
+    color: #f4f1de;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 38px;
+    cursor: pointer;
+}
+
+.messageItem{
+    padding-top: 1.5rem;
+}
+.messageItem h4 {
+    text-align: center;
+}
+
+.messageItem span {
+    color: silver;
+}
+
+.messageBack {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.messageBack.show {
+    display: block;
+}
