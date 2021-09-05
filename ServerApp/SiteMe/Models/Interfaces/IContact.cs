@@ -13,5 +13,6 @@ namespace SiteMe.Models.Interfaces
         Task<bool> ExistIP(string ip);
         Task<IEnumerable<GetAllMessagesViewModel>> GetAllMessages();
         Task ChangeShowMessage(int contactID);
+        Task DeleteMessage(int contactID);
     }
 }

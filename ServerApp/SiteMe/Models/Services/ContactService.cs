@@ -34,12 +34,12 @@ namespace SiteMe.Models.Services
 
         public async Task<bool> ExistIP(string ip)
         {
-            return await db.Contact.AnyAsync(c => c.IP == ip && c.IsShow == false);
+            return await db.Contact.AnyAsync(c => c.IP == ip && c.IsShow == false && c.IsDelete == false);
         }
 
         public async Task<IEnumerable<GetAllMessagesViewModel>> GetAllMessages()
         {
-            return await db.Contact.OrderByDescending(c => c.CreateDate).Select(c=> new GetAllMessagesViewModel()
+            return await db.Contact.Where(s => s.IsDelete == false).OrderByDescending(c => c.CreateDate).Select(c => new GetAllMessagesViewModel()
             {
                 ContactID = c.ContactID,
                 FullName = c.FullName,
@@ -53,10 +53,18 @@ namespace SiteMe.Models.Services
 
         public async Task ChangeShowMessage(int contactID)
         {
-           var message = await db.Contact.FindAsync(contactID);
-           message.IsShow = true; 
-           db.Update(message);
-           await db.SaveChangesAsync();
+            var message = await db.Contact.FindAsync(contactID);
+            message.IsShow = true;
+            db.Update(message);
+            await db.SaveChangesAsync();
+        }
+
+        public async Task DeleteMessage(int contactID)
+        {
+            var message = await db.Contact.FindAsync(contactID);
+            message.IsDelete = true;
+            db.Update(message);
+            await db.SaveChangesAsync();
         }
     }
 }
