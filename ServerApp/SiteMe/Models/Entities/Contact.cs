@@ -34,7 +34,10 @@ namespace SiteMe.Models.Entities
         [Display(Name = "تاریخ ثبت")]
         public DateTime CreateDate { get; set; } = DateTime.Now;
 
-        [Display(Name = "وضعیت")] 
+        [Display(Name = "مشاهده")] 
         public bool IsShow { get; set; } = false;
+
+        [Display(Name = "حذف")]
+        public bool IsDelete { get; set; } = false;
     }
 }
