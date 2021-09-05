@@ -29,7 +29,7 @@ export class ContactComponent implements OnInit {
   FormGroup: FormGroup = new FormGroup({
     FullName: new FormControl('', [
       Validators.required,
-      Validators.minLength(10),
+      Validators.minLength(5),
       Validators.maxLength(150)
     ]),
     Email: new FormControl('', [
@@ -39,7 +39,7 @@ export class ContactComponent implements OnInit {
     ]),
     Message: new FormControl('', [
       Validators.required,
-      Validators.minLength(20),
+      Validators.minLength(15),
       Validators.maxLength(900)
     ]),
     IP: new FormControl('', [])
