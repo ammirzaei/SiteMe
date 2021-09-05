@@ -30,4 +30,7 @@ export class ContactService {
   GetAllMessages() {
     return this.http.get(environment.AddressServer + '/Contact/GetAllMessages', { headers: this.httpHeader }).pipe(catchError(this.httpError));
   }
+  ChangeShowMessage(contactId: number) {
+    return this.http.put(environment.AddressServer + `/Contact/ChangeShowMessage/${contactId}`, null, { headers: this.httpHeader }).pipe(catchError(this.httpError));
+  }
 }
