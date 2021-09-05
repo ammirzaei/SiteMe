@@ -1,32 +1,37 @@
-<div class="admin">
-    <aside>
-        <header class="aside-header">
-            <div class="date">1400/06/10</div>
-            <div class="not">1 پیام</div>
-        </header>
-        <ul class="aside-ul">
-            <h3 class="ul-header">پنل مدیریت</h3>
-            <li>
-                <i class="mdi mdi-24px mdi-home"></i>
-                خانه
-            </li>
-            <li>
-                <i class="mdi mdi-24px mdi-comment"></i>
-                پیام ها
-            </li>
-            <li>
-                <i class="mdi mdi-24px mdi-home"></i>
-                خانه
-            </li>
-            <li>
-                <i class="mdi mdi-24px mdi-logout"></i>
-                خروج
-            </li>
-        </ul>
-    </aside>
-    <main>
-        <section>
-            <router-outlet></router-outlet>
-        </section>
-    </main>
+<link rel="stylesheet" href="/assets/css/bootstrap.rtl.min.css">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <aside>
+                <header class="aside-header">
+                    <div class="date">1400/06/10</div>
+                    <div class="not">1 پیام</div>
+                </header>
+                <ul class="aside-ul">
+                    <h3 class="ul-header">پنل مدیریت</h3>
+                    <li>
+                        <i class="mdi mdi-24px mdi-home"></i>
+                        خانه
+                    </li>
+                    <li>
+                        <i class="mdi mdi-24px mdi-comment"></i>
+                        پیام ها
+                    </li>
+                    <li>
+                        <i class="mdi mdi-24px mdi-home"></i>
+                        خانه
+                    </li>
+                    <li>
+                        <i class="mdi mdi-24px mdi-logout"></i>
+                        خروج
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-6">
+            <main>
+                <router-outlet></router-outlet>
+            </main>
+        </div>
+    </div>
 </div>
