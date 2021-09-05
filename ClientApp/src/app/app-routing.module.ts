@@ -6,7 +6,7 @@ import { HomeComponent } from './Components/Home/home/home.component';
 import { AdminComponent } from './Components/Admin/admin/admin.component';
 import { SamplesComponent } from './Components/Home/samples/samples.component';
 import { AuthGuard } from './Shared/Auth/auth.guard';
-import { Message } from './Shared/Contact/ContactMessage';
+import { MessageComponent } from './Components/Admin/message/message.component';
 
 import { NgModule } from '@angular/core';
 import { AuthComponent } from './Components/Admin/auth/auth.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'Admin', component: AdminComponent, canActivate: [AuthGuard], children: [
-      { path: 'Message', component: Message }
+      { path: 'Message', component: MessageComponent }
     ]
   },
   { path: 'Auth', component: AuthComponent },
@@ -34,7 +34,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
