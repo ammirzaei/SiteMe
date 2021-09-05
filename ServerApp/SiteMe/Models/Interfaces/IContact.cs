@@ -11,6 +11,6 @@ namespace SiteMe.Models.Interfaces
     {
         Task AddContactMessage(ContactViewModel contact);
         Task<bool> ExistIP(string ip);
-        Task<IEnumerable<Contact>> GetAllMessages();
+        Task<IEnumerable<GetAllMessagesViewModel>> GetAllMessages();
     }
 }

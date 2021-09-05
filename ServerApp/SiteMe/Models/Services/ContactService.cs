@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using SiteMe.Models.Classes;
 using SiteMe.Models.Context;
 using SiteMe.Models.Entities;
 using SiteMe.Models.Interfaces;
@@ -36,9 +37,18 @@ namespace SiteMe.Models.Services
             return await db.Contact.AnyAsync(c => c.IP == ip && c.IsShow == false);
         }
 
-        public async Task<IEnumerable<Contact>> GetAllMessages()
+        public async Task<IEnumerable<GetAllMessagesViewModel>> GetAllMessages()
         {
-            return await db.Contact.OrderByDescending(c => c.CreateDate).ToListAsync();
+            return await db.Contact.OrderByDescending(c => c.CreateDate).Select(c=> new GetAllMessagesViewModel()
+            {
+                ContactID = c.ContactID,
+                FullName = c.FullName,
+                Email = c.Email,
+                Message = c.Message,
+                IP = c.IP,
+                CreateDate = c.CreateDate.ToShamsi(),
+                IsShow = c.IsShow
+            }).ToListAsync();
         }
     }
 }
