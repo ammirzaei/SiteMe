@@ -28,4 +28,15 @@ namespace SiteMe.Models.ViewModels
         [MaxLength(50)]
         public string IP { get; set; }
     }
+
+    public class GetAllMessagesViewModel
+    {
+        public int ContactID { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string Message { get; set; }
+        public string IP { get; set; }
+        public string CreateDate { get; set; }
+        public bool IsShow { get; set; }
+    }
 }
