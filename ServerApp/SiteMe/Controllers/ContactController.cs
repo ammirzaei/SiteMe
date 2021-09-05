@@ -52,5 +52,17 @@ namespace SiteMe.Controllers
         {
             return Ok(await _IContact.GetAllMessages());
         }
+
+        [HttpPut]
+        [Route("ChangeShowMessage/{contactID}")]
+        public async Task<IActionResult> PutChangeShowMessage([FromRoute] int contactID)
+        {
+            if (ModelState.IsValid)
+            {
+                await _IContact.ChangeShowMessage(contactID);
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }
