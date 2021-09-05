@@ -28,6 +28,7 @@ namespace SiteMe.Controllers
 
         [HttpPost]
         [Route("CreateMessage")]
+        [AllowAnonymous]
         public async Task<IActionResult> PostMessage([FromBody] ContactViewModel contact)
         {
             if (ModelState.IsValid)
