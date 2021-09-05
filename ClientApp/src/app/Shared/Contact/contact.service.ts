@@ -33,4 +33,7 @@ export class ContactService {
   ChangeShowMessage(contactId: number) {
     return this.http.put(environment.AddressServer + `/Contact/ChangeShowMessage/${contactId}`, null, { headers: this.httpHeader }).pipe(catchError(this.httpError));
   }
+  DeleteMessage(contactID: number) {
+    return this.http.delete(environment.AddressServer + `/Contact/DeleteMessage/${contactID}`, { headers: this.httpHeader }).pipe(catchError(this.httpError));
+  }
 }
