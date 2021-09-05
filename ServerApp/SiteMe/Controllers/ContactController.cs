@@ -65,5 +65,17 @@ namespace SiteMe.Controllers
             }
             return BadRequest();
         }
+
+        [HttpDelete]
+        [Route("DeleteMessage/{contactId}")]
+        public async Task<IActionResult> DeleteMessage([FromRoute] int contactId)
+        {
+            if (ModelState.IsValid)
+            {
+                await _IContact.DeleteMessage(contactId);
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }
