@@ -45,13 +45,13 @@
         "Email2": "ایمیل",
         "Github": "گیت هاب",
         "FormControlFullName-required": "نام خود را باید وارد کنید",
-        "FormControlFullName-minLength": "نام باید بیشتر 10 کاراکتر وارد شود",
+        "FormControlFullName-minLength": "نام باید بیشتر 5 کاراکتر وارد شود",
         "FormControlFullName-maxLength": "نام باید کمتر از 150 کاراکتر وارد شود",
         "FormControlEmail-required": "ایمیل خود را باید وارد کنید",
         "FormControlEmail-email": "ایمیل معتبر وارد کنید",
         "FormControlEmail-maxLength": "ایمیل باید کمتر از 200 کاراکتر وارد شود",
         "FormControlMessage-required": "پیام خود را باید وارد کنید",
-        "FormControlMessage-minLength": "پیام باید بیشتر 20 کاراکتر وارد شود",
+        "FormControlMessage-minLength": "پیام باید بیشتر 15 کاراکتر وارد شود",
         "FormControlMessage-maxLength": "پیام باید کمتر از 900 کاراکتر وارد شود"
     },
     "Samples": {

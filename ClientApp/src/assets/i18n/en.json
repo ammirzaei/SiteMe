@@ -45,13 +45,13 @@
         "Email2": "Email",
         "Github": "Github",
         "FormControlFullName-required": "You need to enter your name",
-        "FormControlFullName-minLength": "Name should enter more 10 characters",
+        "FormControlFullName-minLength": "Name should enter more 5 characters",
         "FormControlFullName-maxLength": "Name should enter less than 150 characters",
         "FormControlEmail-required": "Your email must enter",
         "FormControlEmail-email": "Enter valid email",
         "FormControlEmail-maxLength": "Email must enter less than 200 characters",
         "FormControlMessage-required": "You need to enter your message.",
-        "FormControlMessage-minLength": "Message should enter more of 20 characters",
+        "FormControlMessage-minLength": "Message should enter more of 15 characters",
         "FormControlMessage-maxLength": "Message must enter less than 900 characters"
     },
     "Samples": {
