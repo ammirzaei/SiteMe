@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  AddressServer: "https://ammirzaei.ir/api"
+  AddressServer: "/api"
 };
