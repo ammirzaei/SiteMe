@@ -25,6 +25,7 @@ export class MessageComponent implements OnInit {
     if (message.isShow === false) {
       this._AdminService.ChangeShowMessage(message.contactID).subscribe((success) => {
         this.AllMessages[index].isShow = true;
+        this._AdminService.ShareShowMessage.next();
       });
     }
   }
