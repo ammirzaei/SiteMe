@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AllMessages } from 'src/app/Shared/Contact/ContactMessage';
-import { ContactService } from './../../../Shared/Contact/contact.service';
+import { AdminService } from './../../../Shared/Admin/admin.service';
 
 @Component({
   selector: 'app-message',
@@ -9,10 +9,10 @@ import { ContactService } from './../../../Shared/Contact/contact.service';
 })
 export class MessageComponent implements OnInit {
 
-  constructor(private _ContactService: ContactService) { }
+  constructor(private _AdminService: AdminService) { }
 
   ngOnInit(): void {
-    this._ContactService.GetAllMessages().subscribe((m: any) => this.AllMessages = m);
+    this._AdminService.GetAllMessages().subscribe((m: any) => this.AllMessages = m);
   }
   AllMessages: AllMessages[] = [];
 
@@ -23,7 +23,7 @@ export class MessageComponent implements OnInit {
     document.getElementsByClassName('showMessage')[0].classList.add('show');
     document.getElementsByClassName('messageBack')[0].classList.add('show');
     if (message.isShow === false) {
-      this._ContactService.ChangeShowMessage(message.contactID).subscribe((success) => {
+      this._AdminService.ChangeShowMessage(message.contactID).subscribe((success) => {
         this.AllMessages[index].isShow = true;
       });
     }
@@ -35,7 +35,7 @@ export class MessageComponent implements OnInit {
   DeleteMessage(index: number) {
     if (confirm('آیا این پیام حذف شود؟')) {
       var message = this.AllMessages[index];
-      this._ContactService.DeleteMessage(message.contactID).subscribe((success) => {
+      this._AdminService.DeleteMessage(message.contactID).subscribe((success) => {
         this.AllMessages.splice(index, 1);
       });
     }
