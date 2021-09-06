@@ -1,4 +1,4 @@
 export class GetInfo{
     dateNow!:string;
-    countMessage!:string;
+    countMessage!:number;
 }
