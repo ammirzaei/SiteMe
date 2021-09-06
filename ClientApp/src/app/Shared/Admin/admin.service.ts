@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { throwError } from 'rxjs';
+import { Subject, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
 
@@ -30,6 +30,7 @@ export class AdminService {
     return this.http.delete(environment.AddressServer + `/Admin/DeleteMessage/${contactID}`, { headers: this.httpHeader }).pipe(catchError(this.httpError));
   }
   GetAdminPanelInfo() {
-    return this.http.get(environment.AddressServer + '/Admin/GetAdminPanelInfo').pipe(catchError(this.httpError));
+    return this.http.get(environment.AddressServer + '/Admin/GetAdminPanelInfo', { headers: this.httpHeader }).pipe(catchError(this.httpError));
   }
+  ShareShowMessage = new Subject<any>();
 }
