@@ -14,5 +14,6 @@ namespace SiteMe.Models.Interfaces
         Task<IEnumerable<GetAllMessagesViewModel>> GetAllMessages();
         Task ChangeShowMessage(int contactID);
         Task DeleteMessage(int contactID);
+        Task<AdminViewModel> GetAdminPanelInfo();
     }
 }

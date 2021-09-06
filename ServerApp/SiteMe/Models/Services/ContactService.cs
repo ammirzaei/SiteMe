@@ -66,5 +66,15 @@ namespace SiteMe.Models.Services
             db.Update(message);
             await db.SaveChangesAsync();
         }
+
+        public async Task<AdminViewModel> GetAdminPanelInfo()
+        {
+            AdminViewModel model = new AdminViewModel()
+            {
+                DateNow = DateTime.Now.ToShamsiDate(),
+                CountMessage = await db.Contact.CountAsync(c => c.IsDelete == false && c.IsShow == false)
+            };
+            return await Task.FromResult(model);
+        }
     }
 }
