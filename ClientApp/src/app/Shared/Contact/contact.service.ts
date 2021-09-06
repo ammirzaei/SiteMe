@@ -11,10 +11,6 @@ import { catchError } from 'rxjs/operators';
 export class ContactService {
 
   constructor(private http: HttpClient) { }
-  httpHeader = new HttpHeaders({
-    'Content-Type': 'Application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
-  });
   httpError(error: HttpErrorResponse) {
     if (error.status === 0) {
       alert("سرور در دسترس نیست");
@@ -27,13 +23,5 @@ export class ContactService {
   AddMessage(message: Message) {
     return this.http.post(environment.AddressServer + '/Contact/CreateMessage', message, { observe: 'response' }).pipe(catchError(this.httpError));
   }
-  GetAllMessages() {
-    return this.http.get(environment.AddressServer + '/Contact/GetAllMessages', { headers: this.httpHeader }).pipe(catchError(this.httpError));
-  }
-  ChangeShowMessage(contactId: number) {
-    return this.http.put(environment.AddressServer + `/Contact/ChangeShowMessage/${contactId}`, null, { headers: this.httpHeader }).pipe(catchError(this.httpError));
-  }
-  DeleteMessage(contactID: number) {
-    return this.http.delete(environment.AddressServer + `/Contact/DeleteMessage/${contactID}`, { headers: this.httpHeader }).pipe(catchError(this.httpError));
-  }
+
 }
