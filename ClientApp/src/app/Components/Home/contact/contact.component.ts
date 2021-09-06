@@ -114,6 +114,7 @@ export class ContactComponent implements OnInit {
   Message: Message = new Message();
   MessageOutput: string = '';
   SubmitContact() {
+    this.MessageOutput = '';
     this._Contact.AddMessage(this.Message).subscribe((success) => {
       if (success.status === 200) {
         this._translate.get('Contact.MessageOutput-200').subscribe(res => this.MessageOutput = res);
