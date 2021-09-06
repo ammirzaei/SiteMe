@@ -4,24 +4,20 @@
         <div class="col-lg-3 col-md-4 col-sm-6">
             <aside>
                 <header class="aside-header">
-                    <div class="date">1400/06/10</div>
-                    <div class="not">1 پیام</div>
+                    <div class="date">{{PanelInfo.dateNow}}</div>
+                    <div class="not">{{PanelInfo.countMessage}} پیام</div>
                 </header>
                 <ul class="aside-ul">
                     <h3 class="ul-header">پنل مدیریت</h3>
                     <li routerLink="/Admin" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                        <i class="mdi mdi-24px mdi-home"></i>   
+                        <i class="mdi mdi-24px mdi-home-circle"></i>
                         خانه
                     </li>
                     <li routerLink="/Admin/Message" routerLinkActive="active">
                         <i class="mdi mdi-24px mdi-comment"></i>
                         پیام ها
-                    </li> 
-                    <li>
-                        <i class="mdi mdi-24px mdi-home"></i>
-                        خانه
                     </li>
-                    <li>
+                    <li (click)="Logout()">
                         <i class="mdi mdi-24px mdi-logout"></i>
                         خروج
                     </li>
