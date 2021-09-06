@@ -50,5 +50,12 @@ namespace SiteMe.Controllers
             }
             return BadRequest();
         }
+
+        [HttpGet]
+        [Route("GetAdminPanelInfo")]
+        public async Task<IActionResult> GetAdminPanelInfo()
+        {
+            return Ok(await _IContact.GetAdminPanelInfo());
+        }
     }
 }
