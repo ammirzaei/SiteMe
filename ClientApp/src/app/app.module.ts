@@ -18,6 +18,7 @@ import { AuthComponent } from './Components/Admin/auth/auth.component';
 import { AuthService } from './Shared/Auth/auth.service';
 import { AdminComponent } from './Components/Admin/admin/admin.component';
 import { ContactService } from './Shared/Contact/contact.service';
+import { AdminService } from './Shared/Admin/admin.service';
 import { MessageComponent } from './Components/Admin/message/message.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -51,7 +52,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [AuthService, ContactService],
+  providers: [AuthService, ContactService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
