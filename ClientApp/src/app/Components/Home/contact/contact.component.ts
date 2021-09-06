@@ -116,14 +116,14 @@ export class ContactComponent implements OnInit {
   SubmitContact() {
     this._Contact.AddMessage(this.Message).subscribe((success) => {
       if (success.status === 200) {
-        this.MessageOutput = 'پیام شما ارسال شد.';  
+        this._translate.get('Contact.MessageOutput-200').subscribe(res => this.MessageOutput = res);
       }
       if (success.status === 204) {
-        this.MessageOutput = 'پیام قبلی شما در حال بررسی می باشد.';
+        this._translate.get('Contact.MessageOutput-204').subscribe(res => this.MessageOutput = res);
       }
       this.ResetForm();
     }, (error) => {
-
+      this._translate.get('Contact.MessageOutput-error').subscribe(res => this.MessageOutput = res);
     });
   }
   ResetForm() {

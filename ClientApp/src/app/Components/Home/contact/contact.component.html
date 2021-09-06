@@ -6,7 +6,7 @@
         </div>
         <div class="panel-content-home">
             <div class="contact-message">
-                <form class="contact-form" #form="ngForm" method="POST" autocomplete="off"
+                <form class="contact-form" #form="ngForm" method="POST" autocomplete="on"
                     [formGroup]="FormGroup" (submit)="SubmitContact()">    
                     <div class="form-group">
                         <input type="text" class="form-control" name="FullName"
@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <input type="submit" [value]="'Contact.Send' | translate" id="Send"
                             [disabled]="FormGroup.invalid">
-                        <span class="text-success" *ngIf="MessageOutput!=''">{{MessageOutput}}</span>
+                        <span *ngIf="MessageOutput!=''">{{MessageOutput}}</span>
                     </div>
                 </form>
             </div>
