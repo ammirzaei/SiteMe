@@ -52,7 +52,10 @@
         "FormControlEmail-maxLength": "Email must enter less than 200 characters",
         "FormControlMessage-required": "You need to enter your message.",
         "FormControlMessage-minLength": "Message should enter more of 15 characters",
-        "FormControlMessage-maxLength": "Message must enter less than 900 characters"
+        "FormControlMessage-maxLength": "Message must enter less than 900 characters",
+        "MessageOutput-200" : "Your message was sent.",
+        "MessageOutput-204" : "Your previous message is checking.",
+        "MessageOutput-error" : "Your message was not sent." 
     },
     "Samples": {
         "Details": "Details",

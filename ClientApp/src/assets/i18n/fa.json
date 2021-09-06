@@ -52,7 +52,10 @@
         "FormControlEmail-maxLength": "ایمیل باید کمتر از 200 کاراکتر وارد شود",
         "FormControlMessage-required": "پیام خود را باید وارد کنید",
         "FormControlMessage-minLength": "پیام باید بیشتر 15 کاراکتر وارد شود",
-        "FormControlMessage-maxLength": "پیام باید کمتر از 900 کاراکتر وارد شود"
+        "FormControlMessage-maxLength": "پیام باید کمتر از 900 کاراکتر وارد شود",
+        "MessageOutput-200" : "پیام شما ارسال شد.",
+        "MessageOutput-204" : "پیام قبلی شما در حال بررسی می باشد.",
+        "MessageOutput-error" : "پیام شما ارسال نشد." 
     },
     "Samples": {
         "Details": "جزئیات",
