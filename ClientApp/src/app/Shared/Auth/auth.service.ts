@@ -18,6 +18,6 @@ export class AuthService {
     return throwError(error);
   }
   Login(Login: Login) {
-    return this.http.post(environment.AddressServer + "/Auth/Login", Login, {}).pipe(catchError(this.httpError));
+    return this.http.post(environment.AddressServer + "/Auth/Login", Login).pipe(catchError(this.httpError));
   }
 }
