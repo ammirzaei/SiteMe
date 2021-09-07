@@ -18,7 +18,7 @@ export class ContactService {
     return throwError(error);
   }
   GetIP() {
-    return this.http.get('http://api.ipify.org/?format=json');
+    return this.http.get('https://api.ipify.org/?format=json');
   }
   AddMessage(message: Message) {
     return this.http.post(environment.AddressServer + '/Contact/CreateMessage', message, { observe: 'response' }).pipe(catchError(this.httpError));
