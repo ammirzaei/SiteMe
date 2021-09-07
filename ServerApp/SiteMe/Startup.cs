@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Dr_Hesabi.Classes.Class;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SiteMe.Models.Context;
@@ -34,20 +35,24 @@ namespace SiteMe
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "ClientApp/dist";
+            });
             services.AddDbContext<SiteMeContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SiteMeConnection"));
             });
-            //services.AddAuthorization(option =>
-            //{
-            //    var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(
-            //        JwtBearerDefaults.AuthenticationScheme);
+            services.AddAuthorization(option =>
+            {
+                var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(
+                    JwtBearerDefaults.AuthenticationScheme);
 
-            //    defaultAuthorizationPolicyBuilder =
-            //        defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
+                defaultAuthorizationPolicyBuilder =
+                    defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
 
-            //    option.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
-            //});
+                option.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
+            });
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -92,6 +97,11 @@ namespace SiteMe
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+            if (env.IsProduction())
+            {
+                app.UseSpaStaticFiles();
+            }
             app.UseRouting();
             app.UseCors("DefaultApp");
             app.UseAuthentication();
@@ -100,6 +110,14 @@ namespace SiteMe
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "Start");
+                }
             });
         }
     }
