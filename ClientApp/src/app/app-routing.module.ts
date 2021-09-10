@@ -3,10 +3,7 @@ import { SkillsComponent } from './Components/Home/skills/skills.component';
 import { ProfileComponent } from './Components/Home/profile/profile.component';
 import { AboutComponent } from './Components/Home/about/about.component';
 import { HomeComponent } from './Components/Home/home/home.component';
-import { AdminComponent } from './Components/Admin/admin/admin.component';
 import { SamplesComponent } from './Components/Home/samples/samples.component';
-import { AuthGuard } from './Shared/Auth/auth.guard';
-import { MessageComponent } from './Components/Admin/message/message.component';
 
 import { NgModule } from '@angular/core';
 import { AuthComponent } from './Components/Admin/auth/auth.component';
@@ -22,11 +19,7 @@ const routes: Routes = [
       { path: 'Samples', component: SamplesComponent }
     ]
   },
-  {
-    path: 'Admin', component: AdminComponent, canActivate: [AuthGuard], children: [
-      { path: 'Message', component: MessageComponent }
-    ]
-  },
+  { path: 'Admin', loadChildren: () => import('./Components/Admin/admin.module').then(a => a.AdminModule) },
   { path: 'Auth', component: AuthComponent },
   { path: 'Home', redirectTo: '' },
   { path: '**', redirectTo: '' }
