@@ -114,10 +114,6 @@ namespace SiteMe
             app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "ClientApp";
-                if (env.IsDevelopment())
-                {
-                    spa.UseAngularCliServer(npmScript: "Start");
-                }
             });
         }
     }
