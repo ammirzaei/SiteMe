@@ -27,7 +27,7 @@ namespace SiteMe.Models.Classes
                 message.To.Add(To);
                 message.Body = Body;
                 message.Subject = Subject;
-                message.IsBodyHtml = true;
+                message.IsBodyHtml = false;
 
                 client.Host = "mail.ammirzaei.ir";
                 client.Port = 25;
