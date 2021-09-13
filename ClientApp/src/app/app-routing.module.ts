@@ -8,6 +8,7 @@ import { SamplesComponent } from './Components/Home/samples/samples.component';
 import { NgModule } from '@angular/core';
 import { AuthComponent } from './Components/Admin/auth/auth.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PostsComponent } from './Components/Home/posts/posts.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
       { path: 'About', component: AboutComponent },
       { path: 'Skills', component: SkillsComponent },
       { path: 'Contact', component: ContactComponent },
-      { path: 'Samples', component: SamplesComponent }
+      { path: 'Samples', component: SamplesComponent },
+      { path: 'Posts', component: PostsComponent }
     ]
   },
   { path: 'Admin', loadChildren: () => import('./Components/Admin/admin.module').then(a => a.AdminModule) },
