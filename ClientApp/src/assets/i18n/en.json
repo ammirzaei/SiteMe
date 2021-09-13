@@ -6,14 +6,16 @@
         "Favorite": "My Favorites",
         "Lang": "Language",
         "Contact": "Contact With Me",
-        "Samples": "Sample Work"
+        "Samples": "Sample Work",
+        "Posts": "Posts"
     },
     "Title": {
         "Profile": "AmirMohammad Mirzaei Personal Site | Home",
         "About": "AmirMohammad Mirzaei Personal Site | About Me",
         "Skills": "AmirMohammad Mirzaei Personal Site | Skills",
         "Contact": "AmirMohammad Mirzaei Personal Site | Contact With Me",
-        "Samples": "AmirMohammad Mirzaei Personal Site | Sample Work"
+        "Samples": "AmirMohammad Mirzaei Personal Site | Sample Work",
+        "Posts": "AmirMohammad Mirzaei Personal Site | Posts"
     },
     "Profile": {
         "Name": "AmirMohammad Mirzaei",
@@ -26,7 +28,7 @@
         "Location": "Khorasan Razavi, Torbat-e Heydarieh",
         "Des1": "AmirMohammad Mirzaei was born in 2004 in Torbat-e Heydarieh and studying network and computer software.",
         "Des2": "From the age of 15, I have started seriously in the field of programming.",
-        "Des3" : "Gain second rank in the design trend in thirty ninth cultural and artistic festivals tomorrow.",
+        "Des3": "Gain second rank in the design trend in thirty ninth cultural and artistic festivals tomorrow.",
         "Fav1": "Coding",
         "Fav2": "Coffee",
         "Fav3": "Movie",
@@ -53,9 +55,9 @@
         "FormControlMessage-required": "You need to enter your message.",
         "FormControlMessage-minLength": "Message should enter more of 15 characters",
         "FormControlMessage-maxLength": "Message must enter less than 900 characters",
-        "MessageOutput-200" : "Your message was sent.",
-        "MessageOutput-204" : "Your previous message is checking.",
-        "MessageOutput-error" : "Your message was not sent." 
+        "MessageOutput-200": "Your message was sent.",
+        "MessageOutput-204": "Your previous message is checking.",
+        "MessageOutput-error": "Your message was not sent."
     },
     "Samples": {
         "Details": "Details",
@@ -71,5 +73,15 @@
         "Markup-language": "Markup Language",
         "Framework": "Framework",
         "Library": "Library"
+    },
+    "Posts": {
+        "post1": {
+            "source": "Virgool",
+            "title": "The deployment of the angular and .net core on the server"
+        },
+        "post2": {
+            "source": "Virgool",
+            "title": "403 error in PUT and DELETE methods"
+        }
     }
 }
