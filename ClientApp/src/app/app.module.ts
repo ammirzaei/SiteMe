@@ -20,6 +20,7 @@ import { AdminComponent } from './Components/Admin/admin/admin.component';
 import { ContactService } from './Shared/Contact/contact.service';
 import { AdminService } from './Shared/Admin/admin.service';
 import { MessageComponent } from './Components/Admin/message/message.component';
+import { PostsComponent } from './Components/Home/posts/posts.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -36,7 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     SamplesComponent,
     AuthComponent,
     AdminComponent,
-    MessageComponent
+    MessageComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
