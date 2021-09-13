@@ -56,7 +56,7 @@
     font-size: 36px;
 }
 
-.music {
+.options {
     position: fixed;
     bottom: 10px;
     right: 8px;
@@ -65,9 +65,43 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
+    color: #f5f5f5;
+}
+
+.options>i {
+    font-size: 36px;
+}
+
+.option {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.music, .translate {
+    background-color: #3c3c3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: fixed;
+}
+
+.translate {
+    color: #f5f5f5;
+    bottom: 30px;
+    right: 70px;
+    font-size: 24px;
+}
+
+.music {
+    bottom: 70px;
+    right: 30px;
 }
 
 .music span {
@@ -164,9 +198,25 @@
     .nav-ul li.command i {
         font-size: 30px;
     }
-    .music {
+    .options {
         width: 50px;
         height: 50px;
+    }
+    .music, .translate {
+        width: 45px;
+        height: 45px;
+    }
+    .options>i {
+        font-size: 30px;
+    }
+    .translate {
+        bottom: 25px;
+        right: 65px;
+        font-size: 20px;
+    }
+    .music {
+        bottom: 65px;
+        right: 25px;
     }
     .music span {
         width: 2px;

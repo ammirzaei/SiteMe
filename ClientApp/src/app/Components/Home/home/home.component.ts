@@ -161,4 +161,51 @@ export class HomeComponent implements OnInit {
     }
     this._translate.use(this.SelectLang);
   }
+  isShowOptions: boolean = false;
+  ChangeOptions() {
+    this.isShowOptions = !this.isShowOptions;
+    let options = document.querySelectorAll('.option');
+    if (this.isShowOptions) {
+      options.forEach(function (item, index) {
+        let delay = (index + 2) + "00";
+        item.animate([
+          {
+            opacity: 0,
+            visibility: 'hidden'
+          },
+          {
+            opacity: 1,
+            visibility: 'visible'
+          }
+        ],
+          {
+            duration: 400,
+            easing: 'ease-in',
+            fill: 'forwards',
+            delay: +delay
+          });
+      });
+    }
+    else {
+      options.forEach(function (item, index) {
+        let delay = ((options.length - index) + 2) + "00";
+        item.animate([
+          {
+            opacity: 1,
+            visibility: 'visible'
+          },
+          {
+            opacity: 0,
+            visibility: 'hidden'
+          }
+        ],
+          {
+            duration: 400,
+            easing: 'ease-in',
+            fill: 'forwards',
+            delay: +delay
+          });
+      });
+    }
+  }
 }
