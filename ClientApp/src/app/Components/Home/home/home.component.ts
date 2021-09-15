@@ -165,7 +165,12 @@ export class HomeComponent implements OnInit {
   ChangeOptions() {
     this.isShowOptions = !this.isShowOptions;
     let options = document.querySelectorAll('.option');
+    let option_mdi = document.getElementById('option-mdi');
     if (this.isShowOptions) {
+      setTimeout(() => {
+        option_mdi?.classList.add('mdi-close-circle-outline');
+        option_mdi?.classList.remove('mdi-settings-outline');
+      }, 300);
       options.forEach(function (item, index) {
         let delay = (index + 2) + "00";
         item.animate([
@@ -187,6 +192,10 @@ export class HomeComponent implements OnInit {
       });
     }
     else {
+      setTimeout(() => {
+        option_mdi?.classList.add('mdi-settings-outline');
+        option_mdi?.classList.remove('mdi-close-circle-outline');
+      }, 300);
       options.forEach(function (item, index) {
         let delay = ((options.length - index) + 2) + "00";
         item.animate([
@@ -207,5 +216,6 @@ export class HomeComponent implements OnInit {
           });
       });
     }
+
   }
 }
