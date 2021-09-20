@@ -28,7 +28,7 @@ body.en {
     font-family: roboto, arial, tahoma;
 }
 
-main.home {
+main.homem {
     height: 100vh;
     overflow-y: hidden;
 }
@@ -40,23 +40,6 @@ main .content-home {
     padding-bottom: 2rem;
     z-index: -1;
 }
-
-/* body light */
-
-/* body.light {}
-
-body.light .profile {
-    color: #000;
-}
-
-body.light .typing {
-    border-color: rgba(0, 0, 0, 0.5);
-}
-
-body.light .nav-ul li {
-    background-color: #fff !important;
-    color: #4a4e69 !important;
-} */
 
 img {
     max-width: 100%;
