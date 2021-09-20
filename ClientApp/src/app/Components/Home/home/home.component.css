@@ -74,7 +74,7 @@
     color: #f5f5f5;
 }
 
-.options>i {
+#option-mdi {
     font-size: 34px;
 }
 
@@ -83,7 +83,7 @@
     visibility: hidden;
 }
 
-.music, .translate {
+.music, .translate, .theme {
     background-color: #3c3c3c;
     display: flex;
     align-items: center;
@@ -95,16 +95,25 @@
     position: fixed;
 }
 
+.theme i {
+    font-size: 24px;
+}
+
+.theme {
+    bottom: 5px;
+    right: 70px;
+}
+
 .translate {
     color: #f5f5f5;
-    bottom: 30px;
-    right: 70px;
+    bottom: 72px;
+    right: 5px;
     font-size: 24px;
 }
 
 .music {
-    bottom: 70px;
-    right: 30px;
+    bottom: 62px;
+    right: 62px;
 }
 
 .music span {
@@ -208,21 +217,28 @@
         height: 50px;
         line-height: 50px;
     }
-    .music, .translate {
+    .music, .translate, .theme {
         width: 45px;
         height: 45px;
     }
-    .options>i {
+    .theme i {
+        font-size: 20px;
+    }
+    #option-mdi {
         font-size: 30px;
     }
     .translate {
-        bottom: 25px;
-        right: 65px;
+        bottom: 67px;
+        right: 5px;
         font-size: 20px;
     }
+    .theme {
+        bottom: 5px;
+        right: 65px;
+    }
     .music {
-        bottom: 65px;
-        right: 25px;
+        bottom: 57px;
+        right: 57px;
     }
     .music span {
         width: 2px;

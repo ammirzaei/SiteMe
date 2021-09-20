@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
     this.Audio();
+    this.CheckTheme();
   }
   isActiveNav: boolean = false;
   conditionNav: string = '';
@@ -141,14 +142,25 @@ export class HomeComponent implements OnInit {
       this.audio.pause();
     }
   }
-  // isDarkTheme: boolean = true;
-  // ChangeTheme() {
-  //   this.isDarkTheme = !this.isDarkTheme;
-  //   if (this.isDarkTheme)
-  //     document.getElementsByTagName('body')[0].classList.remove('light');
-  //   else
-  //     document.getElementsByTagName('body')[0].classList.add('light');
-  // }
+  isDarkTheme: boolean = true;
+  ChangeTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
+    this.SetTheme();
+  }
+  SetTheme() {
+    if (this.isDarkTheme)
+      document.getElementsByTagName('body')[0].classList.remove('light');
+    else
+      document.getElementsByTagName('body')[0].classList.add('light');
+  }
+  CheckTheme() {
+    if (localStorage.getItem('theme')) {
+      let theme = localStorage.getItem('theme');
+      theme === 'dark' ? this.isDarkTheme = true : this.isDarkTheme = false;
+      this.SetTheme();
+    }
+  }
   SelectLang: string = 'fa';
   ChangeSelectLang() {
     if (this.SelectLang === "fa") {
@@ -170,9 +182,9 @@ export class HomeComponent implements OnInit {
       setTimeout(() => {
         option_mdi?.classList.add('mdi-close-circle-outline');
         option_mdi?.classList.remove('mdi-settings-outline');
-      }, 300);
+      }, 400);
       options.forEach(function (item, index) {
-        let delay = (index + 2) + "00";
+        let delay = (index + 3) + "00";
         item.animate([
           {
             opacity: 0,
@@ -184,7 +196,7 @@ export class HomeComponent implements OnInit {
           }
         ],
           {
-            duration: 400,
+            duration: 200,
             easing: 'ease-in',
             fill: 'forwards',
             delay: +delay
@@ -195,9 +207,9 @@ export class HomeComponent implements OnInit {
       setTimeout(() => {
         option_mdi?.classList.add('mdi-settings-outline');
         option_mdi?.classList.remove('mdi-close-circle-outline');
-      }, 300);
+      }, 400);
       options.forEach(function (item, index) {
-        let delay = ((options.length - index) + 2) + "00";
+        let delay = ((options.length - index) + 3) + "00";
         item.animate([
           {
             opacity: 1,
@@ -209,7 +221,7 @@ export class HomeComponent implements OnInit {
           }
         ],
           {
-            duration: 400,
+            duration: 200,
             easing: 'ease-in',
             fill: 'forwards',
             delay: +delay

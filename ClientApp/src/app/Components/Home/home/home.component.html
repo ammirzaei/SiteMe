@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/assets/css/styles-light.css" *ngIf="isDarkTheme==false">
 <div class="home">
     <header>
         <nav class="nav">
@@ -32,21 +33,23 @@
                 <!-- <li class="nav-item" title="{{ 'Router.Lang' | translate}}" (click)="ChangeSelectLang()">
                     <span class="lang">{{SelectLang=='fa'?'en':'fa'}}</span>
                 </li> -->
-                <!-- <li class="nav-item" (click)="test()">
-                    <i class="mdi mdi-blogger"></i>
-                </li> -->
                 <!-- <li (click)="ChangeTheme()">
                     <i class="mdi" [class]="isDarkTheme?'mdi-white-balance-sunny':'mdi-brightness-2'"></i>
                 </li> -->
             </ul>
         </nav>
     </header>
-    <main class="home">
+    <main class="homem">
         <router-outlet></router-outlet>
     </main>
     <footer>
         <div class="options">
-            <i (click)="ChangeOptions()" id="option-mdi" class="mdi mdi-settings-outline"></i>
+            <i (click)="ChangeOptions()" id="option-mdi" class="mdi mdi-settings-outline"></i>       
+            <div class="option">
+              <div class="translate">
+                <span class="lang" (click)="ChangeSelectLang()">{{SelectLang=='fa'?'en':'fa'}}</span>
+              </div>
+            </div>
             <div class="option">
                 <div class="music" (click)="CommandMusic()" [class]="isPlayMusic?'play':'pause'">
                     <span></span>
@@ -58,11 +61,10 @@
                 </div>
             </div>
             <div class="option">
-              <div class="translate">
-                <span class="lang" (click)="ChangeSelectLang()">{{SelectLang=='fa'?'en':'fa'}}</span>
-              </div>
+                <div class="theme" (click)="ChangeTheme()">
+                    <i class="mdi" [class]="isDarkTheme?'mdi-white-balance-sunny':'mdi-brightness-2'"></i>
+                </div>
             </div>
         </div>
-
     </footer>
 </div>
