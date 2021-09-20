@@ -1,0 +1,58 @@
+.light .home {
+    background: none, url('/assets/img/background.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.light .nav-ul li, .light .options, .light .music, .light .translate, .light .theme {
+    background-color: #f5f5f5 !important;
+    color: #3c3c3c !important;
+}
+
+.light .nav-ul li.active {
+    color: #c1839f !important;
+}
+
+.light .music span {
+    background-color: #3c3c3c !important;
+}
+
+.light .panel-content-home {
+    color: #3c3c3c;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+.light .fav {
+    background-color: #f5f5f5;
+    color: #3c3c3c;
+}
+
+.light .fav:hover {
+    background-color: #3c3c3c;
+    color: #f5f5f5;
+}
+
+.light .form-group {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.light .form-control {
+    color: #3c3c3c;
+}
+
+.light .contact-message, .light .contact-map {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.light .contact-map {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.light .contact-item a {
+    color: #3c3c3c !important;
+}
+
+.light .contact-item a:hover, .light .contact-item a:focus {
+    color: #00a7b5 !important;
+}
